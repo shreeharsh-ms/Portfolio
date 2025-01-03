@@ -19,7 +19,7 @@ def works(request):
 
 
 def projects(request, id, name):
-    csv_file_path = 'static/project_info.csv'
+    csv_file_path = os.path.join(settings.STATIC_ROOT, 'Projects_Info.csv')
 
     project_data = None
     try:
