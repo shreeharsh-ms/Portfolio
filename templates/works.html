@@ -18,15 +18,13 @@
    <meta property="twitter:title" content="Work - Dennis Snellenberg">
    <meta property="twitter:description"
       content="Creating next level digital products. I help companies from all over the world (Netherlands, United States, United Kingdom, Australia, Germany etc.)">
-   <meta property="twitter:image"
-      content="#">
+   <meta property="twitter:image" content="#">
    <meta name="twitter:card" content="summary_large_image">
    <meta name="google" content="notranslate">
    <meta property="og:locale" content="en">
    <link rel="canonical" href="#">
 
-   <link rel="preload" as="font" href="#"
-      type="font/otf" crossorigin="anonymous">
+   <link rel="preload" as="font" href="#" type="font/otf" crossorigin="anonymous">
 
    <link href="{% static 'css/normalize.css' %}" rel="stylesheet">
    <link href="{% static 'css/locomotive-scroll.css' %}" rel="stylesheet">
@@ -311,8 +309,7 @@
                </div>
                <ul class="links-wrap">
                   <li class="btn btn-link active">
-                     <a href="#" class="btn-click magnetic" data-strength="20"
-                        data-strength-text="10">
+                     <a href="#" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                         <span class="btn-text">
                            <span class="btn-text-inner">Work</span>
                         </span>
@@ -434,7 +431,7 @@
                   <ul class="work-items mouse-pos-list-image-wrap all-active">
                      <li class="development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=1 name='VivaVista-with-AI-Proctor' %}" class="row">
                            <div class="flex-col">
                               <h4><span>VivaVista with AI Proctor</span></h4>
                            </div>
@@ -451,7 +448,8 @@
                      </li>
                      <li class="design development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=2 name='Personalized-Grocery-Recommendation-System' %}"
+                           class="row">
                            <div class="flex-col">
                               <h4><span>Personalized Grocery Recommendation System</span></h4>
                            </div>
@@ -468,7 +466,7 @@
                      </li>
                      <li class="design development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=3 name='DataVIZ' %}" class="row">
                            <div class="flex-col">
                               <h4><span>DataVIZ</span></h4>
                            </div>
@@ -485,7 +483,7 @@
                      </li>
                      <li class="design development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=4 name='Hashware' %}" class="row">
                            <div class="flex-col">
                               <h4><span>Hashware</span></h4>
                            </div>
@@ -500,13 +498,11 @@
                            </div>
                         </a>
                      </li>
-                     <li class="development interaction design visible">
+                     <li class="development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=5 name='Coding-Zen-Website' %}" class="row">
                            <div class="flex-col">
-                              <h4><span>Coding Zen Website (Node.js)
-
-                                 </span></h4>
+                              <h4><span>Coding Zen Website (Node.js)</span></h4>
                            </div>
                            <div class="flex-col animate">
                               <p>GPN Nagpur</p>
@@ -521,11 +517,9 @@
                      </li>
                      <li class="design development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=6 name='Encryptia-Website' %}" class="row">
                            <div class="flex-col">
-                              <h4><span>Encryptia Website (Django)
-
-                                 </span></h4>
+                              <h4><span>Encryptia Website (Django)</span></h4>
                            </div>
                            <div class="flex-col animate">
                               <p>GPN Nagpur</p>
@@ -540,7 +534,7 @@
                      </li>
                      <li class="design development visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=7 name='Retrieving-IP-from-Payload' %}" class="row">
                            <div class="flex-col">
                               <h4><span>Retrieving IP from Payload</span></h4>
                            </div>
@@ -548,7 +542,7 @@
                               <p>GPN Nagpur</p>
                            </div>
                            <div class="flex-col animate">
-                              <p>Security/Networkings</p>
+                              <p>Security/Networking</p>
                            </div>
                            <div class="flex-col animate">
                               <p>2023</p>
@@ -557,7 +551,7 @@
                      </li>
                      <li class="development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=8 name='Django-Reverse-Shell' %}" class="row">
                            <div class="flex-col">
                               <h4><span>Django Reverse Shell - Command Execution</span></h4>
                            </div>
@@ -565,7 +559,7 @@
                               <p>GPN Nagpur</p>
                            </div>
                            <div class="flex-col animate">
-                              <p>Security/Networkings</p>
+                              <p>Security/Networking</p>
                            </div>
                            <div class="flex-col animate">
                               <p>2023</p>
@@ -574,7 +568,7 @@
                      </li>
                      <li class="development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=9 name='Data-Analyzing-Project' %}" class="row">
                            <div class="flex-col">
                               <h4><span>Data Analyzing Project</span></h4>
                            </div>
@@ -591,9 +585,9 @@
                      </li>
                      <li class="development interaction visible">
                         <div class="stripe animate"></div>
-                        <a href="#" class="row">
+                        <a href="{% url 'projects' id=10 name='Cisco-Packet-Tracer-Modules' %}" class="row">
                            <div class="flex-col">
-                              <h4><span>Cisco Packet Tracer <br>Modules </span></h4>
+                              <h4><span>Cisco Packet Tracer Modules</span></h4>
                            </div>
                            <div class="flex-col animate">
                               <p>Nagpur</p>
@@ -606,8 +600,8 @@
                            </div>
                         </a>
                      </li>
-                     <div class="stripe last animate"></div>
                   </ul>
+
                </div>
             </section>
             <section class="section work-tiles grid-fade grid-columns-part">
@@ -897,8 +891,7 @@
             <div class="container">
                <div class="grid-after-btn">
                   <div class="btn btn-normal btn-dark">
-                     <a href="#" class="btn-click magnetic" data-strength="25"
-                        data-strength-text="15">
+                     <a href="#" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                         <div class="btn-fill"></div>
                         <span class="btn-text">
                            <span class="btn-text-inner change">Archive<div class="count-nr">59</div></span>
@@ -946,8 +939,7 @@
                            <div class="btn btn-round" data-scroll="" data-scroll-speed="-1"
                               data-scroll-direction="horizontal" data-scroll-position="bottom"
                               data-scroll-offset="-50%, 0">
-                              <a href="#" class="btn-click magnetic "
-                                 data-strength="100" data-strength-text="50">
+                              <a href="#" class="btn-click magnetic " data-strength="100" data-strength-text="50">
                                  <div class="btn-fill"></div>
                                  <span class="btn-text">
                                     <span class="btn-text-inner">Get in touch</span>

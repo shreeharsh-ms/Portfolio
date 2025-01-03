@@ -36,5 +36,5 @@ def convert_links_to_static(file_path):
         print(f"An error occurred: {e}")
 
 # Example usage
-file_path = 'project.html'  # Replace with your file path
+file_path = 'projects.html'  # Replace with your file path
 convert_links_to_static(file_path)
