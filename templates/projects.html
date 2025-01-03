@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html><!--  This site was created by Dennis Snellenberg (Code by Dennis)  -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,17 +9,17 @@
 
 
    <meta name="description"
-      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis">
-   <meta property="og:title" content="The Damai - Dennis Snellenberg">
+      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. ">
+   <meta property="og:title" content="{{ project.name }} - Shreeharh Shivpuje">
    <meta property="og:description"
-      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis">
+      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. ">
    <meta property="og:image" content="images/thumbnail-thedamai-v2-860x540-crop-q72.jpg">
    <meta property="og:site_name" content="Dennis Snellenberg">
    <meta property="og:locale" content="en">
    <meta property="og:type" content="website">
-   <meta property="twitter:title" content="The Damai - Dennis Snellenberg">
+   <meta property="twitter:title" content="{{ project.name }} - Shreeharh Shivpuje">
    <meta property="twitter:description"
-      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis">
+      content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. ">
    <meta property="twitter:image"
       content="https://dennissnellenberg.com/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-860x540-crop-q72.jpg">
    <meta name="twitter:card" content="summary_large_image">
@@ -81,7 +81,7 @@
             </h2>
             <h2>TWICE<div class="dot"></div>
             </h2>
-            <h2 class="active">The Damai<div class="dot"></div>
+            <h2 class="active">{{ project.name }}<div class="dot"></div>
             </h2>
             <h2>FABRIC™<div class="dot"></div>
             </h2>
@@ -146,24 +146,24 @@
                <h5>Navigation</h5>
                <div class="stripe"></div>
                <ul class="links-wrap">
-                  <li class="btn btn-link">
-                     <a href="https://dennissnellenberg.com" class="btn-click magnetic" data-strength="24"
-                        data-strength-text="12">
+                  <li class="btn btn-link active">
+                     <a href="{% url 'index' %}" class="btn-click magnetic" data-strength="24" data-strength-text="12">
                         <span class="btn-text">
                            <span class="btn-text-inner">Home</span>
                         </span>
                      </a>
                   </li>
+
                   <li class="btn btn-link active">
-                     <a href="https://dennissnellenberg.com/work" class="btn-click magnetic" data-strength="24"
-                        data-strength-text="12">
+                     <a href="{% url 'works' %}" class="btn-click magnetic" data-strength="24" data-strength-text="12">
                         <span class="btn-text">
                            <span class="btn-text-inner">Work</span>
                         </span>
                      </a>
                   </li>
+
                   <li class="btn btn-link">
-                     <a href="https://dennissnellenberg.com/about" class="btn-click magnetic" data-strength="24"
+                     <a href="{% url 'aboutUs' %}" class="btn-click magnetic" data-strength="24"
                         data-strength-text="12">
                         <span class="btn-text">
                            <span class="btn-text-inner">About</span>
@@ -171,13 +171,14 @@
                      </a>
                   </li>
                   <li class="btn btn-link">
-                     <a href="https://dennissnellenberg.com/contact" class="btn-click magnetic" data-strength="24"
+                     <a href="{% url 'contact' %}" class="btn-click magnetic" data-strength="24"
                         data-strength-text="12">
                         <span class="btn-text">
                            <span class="btn-text-inner">Contact</span>
                         </span>
                      </a>
                   </li>
+
                </ul>
             </div>
             <div class="row social-row">
@@ -186,31 +187,23 @@
                   <h5>Socials</h5>
                   <ul>
                      <li class="btn btn-link btn-link-external">
-                        <a href="https://www.awwwards.com/dennissnellenberg/" target="_blank" class="btn-click magnetic"
-                           data-strength="20" data-strength-text="10">
-                           <span class="btn-text">
-                              <span class="btn-text-inner">Awwwards</span>
-                           </span>
-                        </a>
-                     </li>
-                     <li class="btn btn-link btn-link-external">
-                        <a href="https://www.instagram.com/codebydennis/" target="_blank" class="btn-click magnetic"
-                           data-strength="20" data-strength-text="10">
+                        <a href="https://www.instagram.com/shhh_its_shrii/profilecard/?igsh=MW91aG05cmhpeXF4NQ=="
+                           target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                            <span class="btn-text">
                               <span class="btn-text-inner">Instagram</span>
                            </span>
                         </a>
                      </li>
                      <li class="btn btn-link btn-link-external">
-                        <a href="https://twitter.com/codebydennis" target="_blank" class="btn-click magnetic"
-                           data-strength="20" data-strength-text="10">
+                        <a href="https://x.com/Shreeharsh98996?t=2GJkZMcuLs3HfKXfYHiQgg&s=08" target="_blank"
+                           class="btn-click magnetic" data-strength="20" data-strength-text="10">
                            <span class="btn-text">
                               <span class="btn-text-inner">Twitter</span>
                            </span>
                         </a>
                      </li>
                      <li class="btn btn-link btn-link-external">
-                        <a href="https://www.linkedin.com/in/dennissnellenberg/" target="_blank"
+                        <a href="https://www.linkedin.com/in/shreeharsh-shivpuje-95a397207/" target="_blank"
                            class="btn-click magnetic" data-strength="20" data-strength-text="10">
                            <span class="btn-text">
                               <span class="btn-text-inner">LinkedIn</span>
@@ -228,20 +221,23 @@
                <div class="nav-bar">
                   <div class="credits-top">
                      <div class="btn btn-link btn-left-top">
-                        <a href="https://dennissnellenberg.com" class="btn-click magnetic" data-strength="20"
+                        <a href="{% url 'index' %}" class="btn-click magnetic" data-strength="20"
                            data-strength-text="10">
                            <span class="btn-text">
-                              <div class="credit"><span>©</span></div>
-                              <div class="cbd"><span class="code-by">Code by </span><span class="dennis"><span
-                                       class="dennis-span">Dennis</span> <span
-                                       class="snellenberg">Snellenberg</span></span></div>
+                              <div class="credit"><span
+                                    style="font-weight: 600; font-size: 28px; color: rgb(65, 65, 65);">!</span>
+                              </div>
+                              <div class="cbd"><span class="dennis"><span class="dennis-span"
+                                       style="color: rgb(65, 65, 65);  font-size: 24px; font-weight: 400;">It's
+                                       Shreeharsh
+                                    </span></span></div>
                            </span>
                         </a>
                      </div>
                   </div>
                   <ul class="links-wrap">
-                     <li class="btn btn-link active">
-                        <a href="https://dennissnellenberg.com/work" class="btn-click magnetic" data-strength="20"
+                     <li class="btn btn-link">
+                        <a href="{% url 'works' %}" class="btn-click magnetic" data-strength="20"
                            data-strength-text="10">
                            <span class="btn-text">
                               <span class="btn-text-inner">Work</span>
@@ -249,20 +245,22 @@
                         </a>
                      </li>
                      <li class="btn btn-link">
-                        <a href="https://dennissnellenberg.com/about" class="btn-click magnetic" data-strength="20"
-                           data-strength-text="10">
+                        <a href="{% url 'aboutUs' %}" class="btn-click magnetic" data-strength="20"
+                           data-strength-text="10" title="Learn more about us" aria-label="About Us">
                            <span class="btn-text">
                               <span class="btn-text-inner">About</span>
                            </span>
                         </a>
+
                      </li>
                      <li class="btn btn-link">
-                        <a href="https://dennissnellenberg.com/contact" class="btn-click magnetic" data-strength="20"
-                           data-strength-text="10">
+                        <a href="{% url 'contact' %}" class="btn-click magnetic" data-strength="24"
+                           data-strength-text="12" title="Contact Us" aria-label="Contact Us">
                            <span class="btn-text">
                               <span class="btn-text-inner">Contact</span>
                            </span>
                         </a>
+
                      </li>
                      <li class="btn btn-link btn-menu">
                         <div class="btn-click magnetic" data-strength="20" data-strength-text="10">
@@ -276,7 +274,7 @@
                <div class="container medium once-in">
                   <div class="row">
                      <div class="flex-col">
-                        <h1>The Damai</h1>
+                        <h1>{{ project.name }}</h1>
                      </div>
                   </div>
                </div>
@@ -565,31 +563,24 @@
                            <h5>Socials</h5>
                            <ul>
                               <li class="btn btn-link btn-link-external">
-                                 <a href="https://www.awwwards.com/dennissnellenberg/" target="_blank"
-                                    class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                                    <span class="btn-text">
-                                       <span class="btn-text-inner">Awwwards</span>
-                                    </span>
-                                 </a>
-                              </li>
-                              <li class="btn btn-link btn-link-external">
-                                 <a href="https://www.instagram.com/codebydennis/" target="_blank"
-                                    class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                                 <a href="https://www.instagram.com/shhh_its_shrii/profilecard/?igsh=MW91aG05cmhpeXF4NQ=="
+                                    target="_blank" class="btn-click magnetic" data-strength="20"
+                                    data-strength-text="10">
                                     <span class="btn-text">
                                        <span class="btn-text-inner">Instagram</span>
                                     </span>
                                  </a>
                               </li>
                               <li class="btn btn-link btn-link-external">
-                                 <a href="https://dribbble.com/dennissnellenberg" target="_blank"
+                                 <a href="https://x.com/Shreeharsh98996?t=2GJkZMcuLs3HfKXfYHiQgg&s=08" target="_blank"
                                     class="btn-click magnetic" data-strength="20" data-strength-text="10">
                                     <span class="btn-text">
-                                       <span class="btn-text-inner">Dribbble</span>
+                                       <span class="btn-text-inner">Twitter</span>
                                     </span>
                                  </a>
                               </li>
                               <li class="btn btn-link btn-link-external">
-                                 <a href="https://www.linkedin.com/in/dennissnellenberg/" target="_blank"
+                                 <a href="https://www.linkedin.com/in/shreeharsh-shivpuje-95a397207/" target="_blank"
                                     class="btn-click magnetic" data-strength="20" data-strength-text="10">
                                     <span class="btn-text">
                                        <span class="btn-text-inner">LinkedIn</span>
