@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import os
+import csv
+from django.conf import settings
 
 def index(request):
     return render(request, 'home.html')
