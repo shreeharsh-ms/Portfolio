@@ -2,6 +2,8 @@ from django.shortcuts import render
 import os
 import csv
 from django.conf import settings
+from django.http import Http404
+
 
 def index(request):
     return render(request, 'home.html')
