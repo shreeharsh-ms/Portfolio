@@ -288,17 +288,15 @@
                         <h5>Role / Services</h5>
                         <div class="stripe"></div>
                         <li>
-                           <p>{{ project.get('Role / Services') }}</p>
+                           <p>{{ project.role_services }}</p>
                         </li>
 
                      </div>
                      <div class="flex-col">
                         <h5>Credits</h5>
                         <div class="stripe"></div>
-                        {% for credit in project.Credits %}
-                        <li>
-                           <p>{{ credit }}</p>
-                        </li>
+                        {% for credit in project.credits %}
+                        <li>{{ credit }}</li>
                         {% endfor %}
 
                      </div>
@@ -306,10 +304,10 @@
                         <h5>Location & year</h5>
                         <div class="stripe"></div>
                         <li>
-                           <p>{{ project.Location }}</p>
+                           <p>{{ project.location }}</p>
                         </li>
                         <li>
-                           <p>{{ project.Year }}</p>
+                           <p>{{ project.year }}</p>
                         </li>
 
                      </div>
