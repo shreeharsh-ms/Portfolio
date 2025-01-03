@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import os
 
 def index(request):
     return render(request, 'home.html')
@@ -11,8 +12,8 @@ def aboutUs(request):
 
 def works(request):
     return render(request, 'works.html')  
-    
-          
+
+
 def projects(request, id, name):
     # Path to the CSV file in the static folder
     csv_file_path = os.path.join(settings.STATIC_ROOT, 'Projects_Info.csv')
