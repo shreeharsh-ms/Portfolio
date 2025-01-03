@@ -11,3 +11,6 @@ def aboutUs(request):
 
 def works(request):
     return render(request, 'works.html')        
+
+def projects(request):
+    return render(request, 'projects.html')        
