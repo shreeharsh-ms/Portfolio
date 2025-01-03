@@ -17,28 +17,29 @@ def works(request):
 
 
 def projects(request, id, name):
-    # Path to the CSV file in the static folder
-    csv_file_path = os.path.join(settings.STATIC_ROOT, 'Projects_Info.csv')
-    
-    project_details = None
-    
-    # Open and read the CSV file
-    with open(csv_file_path, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader(file)  # Use DictReader to read rows as dictionaries
-        
-        # Iterate through the rows to find the project with the matching ID
-        for row in reader:
-            if int(row['id']) == int(id):  # Ensure both are integers for comparison
-                project_details = row
-                break
+    csv_file_path = 'static/project_info.csv'
 
-    # Check if project details were found
-    if not project_details:
-        return render(request, '404.html', {"message": "Project not found"})  # Handle project not found
+    project_data = None
+    try:
+        with open(csv_file_path, mode='r', encoding='utf-8') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                if row.get('id') == str(id):
+                    row['Credits'] = row['Credits'].split('; ')  # Convert Credits to a list
+                    # Normalize keys for easier template access
+                    row['Location'] = row.pop('Location', '')
+                    row['Year'] = row['Location & Year'].split(', ')[1] if 'Location & Year' in row else ''
+                    project_data = row
+                    break
+    except FileNotFoundError:
+        raise Http404("CSV file not found.")
+    except Exception as e:
+        raise Http404(f"An error occurred: {e}")
 
-    # Pass the project details to the context
+    if not project_data:
+        raise Http404("Project not found.")
+
     context = {
-        'project': project_details,
+        'project': project_data,
     }
-    
     return render(request, 'projects.html', context)

@@ -5,7 +5,8 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <title>{{ project['Project Name'] }} - Shreeharh Shivpuje</title>
+   <title>{{ project.get('Project Name') }} - Shreeharh Shivpuje</title>
+
    <meta name="description"
       content="Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis">
    <meta property="og:title" content="The Damai - Dennis Snellenberg">
@@ -286,28 +287,30 @@
                         <h5>Role / Services</h5>
                         <div class="stripe"></div>
                         <li>
-                           <p>{{ project['Role / Services'] }}</p>
+                           <p>{{ project.get('Role / Services') }}</p>
                         </li>
 
                      </div>
                      <div class="flex-col">
                         <h5>Credits</h5>
                         <div class="stripe"></div>
-                        {% for credit in project['Credits'] %}
+                        {% for credit in project.Credits %}
                         <li>
                            <p>{{ credit }}</p>
                         </li>
                         {% endfor %}
+
                      </div>
                      <div class="flex-col">
                         <h5>Location & year</h5>
                         <div class="stripe"></div>
                         <li>
-                           <p>{{ project['Location'] }}</p>
+                           <p>{{ project.Location }}</p>
                         </li>
                         <li>
-                           <p>{{ project['Year'] }}</p>
+                           <p>{{ project.Year }}</p>
                         </li>
+
                      </div>
                   </div>
                </div>
