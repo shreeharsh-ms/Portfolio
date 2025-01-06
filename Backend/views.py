@@ -39,6 +39,10 @@ def projects(request, id, name):
         raise Http404("Project not found.")
 
     # Isolate and prepare individual fields, including the new ones
+    next_project_id = int(project_data.get('id', -1)) + 1  # Get the ID for the next project
+    next_project_name = project_data.get('Next Project Name', 'None')
+    next_project_link = f"/projects/{next_project_id}/{next_project_name.replace(' ', '-')}/"
+
     project_context = {
         'id': project_data.get('id', 'N/A'),
         'name': project_data.get('Project Name', 'Untitled Project'),
@@ -54,8 +58,8 @@ def projects(request, id, name):
         ],
         'location': project_data.get('Location', 'N/A'),
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
-        'next_project_name': project_data.get('Next Project Name', 'None'),
-        'next_project_link': project_data.get('Next Project Link', '#'),
+        'next_project_name': next_project_name,
+        'next_project_link': next_project_link,
         # New fields for detailed project info
         'project_overview': project_data.get('Project Overview', 'No overview available.'),
         'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),

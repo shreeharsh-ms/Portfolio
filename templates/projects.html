@@ -577,22 +577,22 @@
             <section class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom"
                data-scroll-offset="-25%, 0%">
                <div class="container medium">
-                  <a href="{% url 'projects' id=2 name='Personalized-Grocery-Recommendation-System' %}"
-                     class="row next-case-btn">
+                  <a href="{{ project.next_project_link }}" class="row next-case-btn">
                      <div class="flex-col">
                         <p>Next case</p>
-                        <h2>{{ next_project_name }}</h2>
+                        <h2>{{ project.next_project_name }}</h2>
                      </div>
                      <div class="tile-image-wrap">
                         <div class="tile-image">
                            <div class="overlay overlay-image lazy" data-scroll="" data-scroll-speed="2.5"
                               data-scroll-position="bottom"
                               style="background-color:#48494A; background-position: center center; background-repeat: no-repeat; background-size: cover;"
-                              data-bg="{{ next_project_image }}">
+                              data-bg="{{ project.images.0 }}">
                            </div>
                         </div>
                      </div>
                   </a>
+
 
                   <div class="row">
                      <div class="flex-col">
