@@ -65,8 +65,9 @@ def projects(request, id, name):
         ],
         'location': project_data.get('Location', 'N/A'),
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
-        'next_project_name': next_project_data.get('Next Project Name', 'None'),
-        'next_project_link': next_project_data.get('Next Project Link', '#'),
+'next_project_name': next_project_data.get('Project Name', 'None'),
+'next_project_link': f"/projects/{next_project_data.get('id', '')}/{next_project_data.get('Project Name', '').replace(' ', '-').replace('/', '-')}" if next_project_data else '#',
+
         # New fields for detailed project info
         'project_overview': project_data.get('Project Overview', 'No overview available.'),
         'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),
