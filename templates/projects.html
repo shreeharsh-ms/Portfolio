@@ -448,36 +448,19 @@
                </div>
             </div>
          </section>
-         <section class="section single-block block-device block_1 block-padding-bottom "
-            style="background-color: #E0D9D1;" data-scroll-section="">
-            <div class="container">
-               <div class="row device-nodevice">
-                  <div class="flex-col">
-                     <div class="device">
-                        <div class="single-image">
-
-                           <div class="overlay overlay-image playpauze"><video class="overlay"
-                                 src="media/thedamai-home.mp4" loop="" muted="" playsinline=""></video></div>
-
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
          <section class="section single-block block-fullwidth block_2" data-scroll-section="">
+            {% if project.images.2 %}
             <div class="row">
                <div class="flex-col">
                   <div class="single-image">
-
                      <img class="overlay overlay-image lazy" data-scroll="" data-scroll-speed="-2"
-                        src="images/kien_team-52-540x.jpg"
-                        data-src="https://dennissnellenberg.com/media/pages/work/the-damai/0367a4932e-1710451142/kien_team-52.jpg"
+                        src="{% static 'images/kien_team-52-540x.jpg' %}" data-src="{% static project.images.2 %}"
                         width="5856" height="3896">
                      <div class="overlay dark-overlay" style="opacity: 0;"></div>
                   </div>
                </div>
             </div>
+            {% endif %}
          </section>
          <section class="section single-block block-device block_3  " style="background-color: #E0D9D1;"
             data-scroll-section="">
