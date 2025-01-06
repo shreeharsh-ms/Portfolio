@@ -392,18 +392,34 @@
                               class="animate-dot">.</span><span class="animate-dot">.</span></h2>
                      </div>
                   </div>
+
                   <div class="row">
-                     <!-- Looping through sections -->
-                     {% for section in project.sections %}
+                     <!-- Project Overview Section -->
                      <div class="flex-col">
-                        <h5>{{ forloop.counter|pad:2 }}</h5>
+                        <h5>01</h5>
                         <div class="stripe"></div>
-                        <h4>{{ section.title }}</h4>
-                        <p>{{ section.description }}</p>
+                        <h4>Project Overview</h4>
+                        <p>{{ project.project_overview }}</p>
                      </div>
-                     {% endfor %}
+
+                     <!-- Technologies & Features Section -->
+                     <div class="flex-col">
+                        <h5>02</h5>
+                        <div class="stripe"></div>
+                        <h4>Technologies & Features</h4>
+                        <p>{{ project.technologies_features }}</p>
+                     </div>
+
+                     <!-- Impact & Future Directions Section -->
+                     <div class="flex-col">
+                        <h5>03</h5>
+                        <div class="stripe"></div>
+                        <h4>Impact & Future Directions</h4>
+                        <p>{{ project.impact_future_directions }}</p>
+                     </div>
                   </div>
                </div>
+
 
             </section>
          </section>
