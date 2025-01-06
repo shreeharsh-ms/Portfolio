@@ -352,9 +352,31 @@
                               src="{% static project.images.0 %}" alt="{{ project.name }} Image">
 
                            <!-- Project Name Overlay -->
+                           <style>
+                              .project-name-overlay {
+                                 position: absolute;
+                                 top: 50%;
+                                 left: 50%;
+                                 transform: translate(-50%, -50%);
+                                 /* Center the text */
+                                 color: white;
+                                 /* Set the text color */
+                                 font-size: 3rem;
+                                 /* Adjust the font size as needed */
+                                 font-family: 'Brush Script MT', cursive;
+                                 /* Calligraphy-style font */
+                                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+                                 /* Add a text shadow for better readability */
+                                 padding: 10px;
+                                 text-align: center;
+                                 z-index: 10;
+                                 /* Ensure it appears above the image */
+                              }
+                           </style>
                            <div class="project-name-overlay">
                               {{ project.name }}
                            </div>
+
                         </div>
 
                      </div>
