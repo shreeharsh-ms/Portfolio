@@ -442,24 +442,39 @@
                </div>
             </div>
          </section>
-         <section class="section single-block block-device block_3  " style="background-color: #E0D9D1;"
+         <section class="section single-block block-device block_0  " style="background-color: #E0D9D1;"
             data-scroll-section="">
             <div class="container">
                <div class="row device-mbp15">
                   <div class="flex-col">
                      <div class="device">
-                        <div class="single-image">
 
-                           <div class="overlay overlay-image playpauze"><video class="overlay"
-                                 src="media/thedamai-spa.mp4" loop="" muted="" playsinline=""></video></div>
-
-                        </div>
-
+                        {% if project.images.2 %}
                         <div class="overlay-device-image">
                            <div class="overlay overlay-device"
-                              style="background: url('images/device-mbp-15-nonotch.png') center center no-repeat; background-size: cover;">
+                              style="background: url('{% static project.images.2 %}') center center no-repeat; background-size: cover;">
                            </div>
                         </div>
+                        {% endif %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section single-block block-device block_0  " style="background-color: #E0D9D1;"
+            data-scroll-section="">
+            <div class="container">
+               <div class="row device-mbp15">
+                  <div class="flex-col">
+                     <div class="device">
+
+                        {% if project.images.3 %}
+                        <div class="overlay-device-image">
+                           <div class="overlay overlay-device"
+                              style="background: url('{% static project.images.3 %}') center center no-repeat; background-size: cover;">
+                           </div>
+                        </div>
+                        {% endif %}
                      </div>
                   </div>
                </div>
