@@ -18,6 +18,12 @@ def works(request):
     return render(request, 'works.html')  
 
 
+import csv
+import os
+from django.conf import settings
+from django.shortcuts import render
+from django.http import Http404
+
 def projects(request, id, name):
     csv_file_path = os.path.join(settings.STATIC_ROOT, 'Projects_Info.csv')
 
@@ -65,13 +71,16 @@ def projects(request, id, name):
         ],
         'location': project_data.get('Location', 'N/A'),
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
-'next_project_name': next_project_data.get('Project Name', 'None'),
-'next_project_link': f"/projects/{next_project_data.get('id', '')}/{next_project_data.get('Project Name', '').replace(' ', '-').replace('/', '-')}" if next_project_data else '#',
-
+        'next_project_name': next_project_data.get('Project Name', 'None'),
+        'next_project_link': f"/projects/{next_project_data.get('id', '')}/{next_project_data.get('Project Name', '').replace(' ', '-').replace('/', '-')}" if next_project_data else '#',
+        
         # New fields for detailed project info
         'project_overview': project_data.get('Project Overview', 'No overview available.'),
         'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),
-        'impact_future_directions': project_data.get('Impact & Future Directions', 'No impact details available.')
+        'impact_future_directions': project_data.get('Impact & Future Directions', 'No impact details available.'),
+        
+        # New field for next project image
+        'next_project_image1': next_project_data.get('Next Project Image1', '')
     }
 
     # Pass the isolated data to the template
