@@ -80,7 +80,7 @@ def projects(request, id, name):
         'impact_future_directions': project_data.get('Impact & Future Directions', 'No impact details available.'),
         
         # New field for next project image
-        'next_project_image1': next_project_data.get('Next Project Image1', '')
+        'next_project_image1': project_data.get('Next Project Image1', '')
     }
 
     # Pass the isolated data to the template
