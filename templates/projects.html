@@ -348,8 +348,9 @@
                         </div>
                         <div class="single-image">
                            <img class="overlay lazy" data-scroll="" data-scroll-speed="-1"
-                              src="images/case-image-2-540x.jpg"
-                              data-src="https://dennissnellenberg.com/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg">
+                              src="{% static project.images.0 %}" alt="{{ project.name }} Image">
+
+                           data-src="https://dennissnellenberg.com/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg">
                            <img class="overlay overlay-image-top lazy"
                               data-src="https://dennissnellenberg.com/media/pages/work/the-damai/57740648c2-1710449705/case-header-thedamai.svg">
                         </div>
