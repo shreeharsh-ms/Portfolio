@@ -27,28 +27,18 @@ def projects(request, id, name):
 
     # Read the CSV file and find the project
     project_data = {}
-    next_project_data = {}
     with open(csv_file_path, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
             if int(row.get('id', -1)) == id:
                 project_data = row
-                next_project_id = int(row.get('Next Project Link', '0').split('/')[-1])  # Extract next project ID from the link
-                # Find the next project by ID
-                for next_row in reader:
-                    if int(next_row.get('id', -1)) == next_project_id:
-                        next_project_data = next_row
-                        break
                 break
 
     # Raise 404 if no matching project found
     if not project_data:
         raise Http404("Project not found.")
-    
-    if not next_project_data:
-        raise Http404("Next project not found.")
 
-    # Prepare context for the project and next project
+    # Isolate and prepare individual fields, including the new ones
     project_context = {
         'id': project_data.get('id', 'N/A'),
         'name': project_data.get('Project Name', 'Untitled Project'),
@@ -64,13 +54,13 @@ def projects(request, id, name):
         ],
         'location': project_data.get('Location', 'N/A'),
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
-        'next_project_name': next_project_data.get('Project Name', 'None'),
-        'next_project_link': next_project_data.get('Next Project Link', '#'),
-        'next_project_image': next_project_data.get('Image1', ''),
+        'next_project_name': project_data.get('Next Project Name', 'None'),
+        'next_project_link': project_data.get('Next Project Link', '#'),
         # New fields for detailed project info
         'project_overview': project_data.get('Project Overview', 'No overview available.'),
         'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),
         'impact_future_directions': project_data.get('Impact & Future Directions', 'No impact details available.')
     }
 
+    # Pass the isolated data to the template
     return render(request, 'projects.html', {'project': project_context})
