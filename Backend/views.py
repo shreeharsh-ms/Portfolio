@@ -27,29 +27,18 @@ def projects(request, id, name):
 
     # Read the CSV file and find the project
     project_data = {}
-    next_project_data = {}
     with open(csv_file_path, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
             if int(row.get('id', -1)) == id:
                 project_data = row
-                next_project_id = row.get('Next Project ID', None)
                 break
 
     # Raise 404 if no matching project found
     if not project_data:
         raise Http404("Project not found.")
 
-    # If there's a next project, find its details
-    if next_project_id:
-        with open(csv_file_path, mode='r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                if int(row.get('id', -1)) == int(next_project_id):
-                    next_project_data = row
-                    break
-
-    # Prepare project context data
+    # Isolate and prepare individual fields, including the new ones
     project_context = {
         'id': project_data.get('id', 'N/A'),
         'name': project_data.get('Project Name', 'Untitled Project'),
@@ -65,8 +54,8 @@ def projects(request, id, name):
         ],
         'location': project_data.get('Location', 'N/A'),
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
-        'next_project_name': next_project_data.get('Next Project Name', 'None'),
-        'next_project_link': next_project_data.get('Next Project Link', '#'),
+        'next_project_name': project_data.get('Next Project Name', 'None'),
+        'next_project_link': project_data.get('Next Project Link', '#'),
         # New fields for detailed project info
         'project_overview': project_data.get('Project Overview', 'No overview available.'),
         'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),
