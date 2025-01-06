@@ -347,13 +347,16 @@
                            </div>
                         </div>
                         <div class="single-image">
+                           <!-- Image -->
                            <img class="overlay lazy" data-scroll="" data-scroll-speed="-1"
                               src="{% static project.images.0 %}" alt="{{ project.name }} Image">
 
-                           data-src="https://dennissnellenberg.com/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg">
-                           <img class="overlay overlay-image-top lazy"
-                              data-src="https://dennissnellenberg.com/media/pages/work/the-damai/57740648c2-1710449705/case-header-thedamai.svg">
+                           <!-- Project Name Overlay -->
+                           <div class="project-name-overlay">
+                              {{ project.name }}
+                           </div>
                         </div>
+
                      </div>
                   </div>
                </div>
