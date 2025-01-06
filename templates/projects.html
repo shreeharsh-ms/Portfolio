@@ -577,21 +577,23 @@
             <section class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom"
                data-scroll-offset="-25%, 0%">
                <div class="container medium">
-                  <a href="https://dennissnellenberg.com/work/fabric" class="row next-case-btn">
+                  <a href="{% url 'projects' id=2 name='Personalized-Grocery-Recommendation-System' %}"
+                     class="row next-case-btn">
                      <div class="flex-col">
                         <p>Next case</p>
-                        <h2>FABRIC™</h2>
+                        <h2>{{ next_project_name }}</h2>
                      </div>
                      <div class="tile-image-wrap">
                         <div class="tile-image">
                            <div class="overlay overlay-image lazy" data-scroll="" data-scroll-speed="2.5"
                               data-scroll-position="bottom"
                               style="background-color:#48494A; background-position: center center; background-repeat: no-repeat; background-size: cover;"
-                              data-bg="https://dennissnellenberg.com/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg">
+                              data-bg="{{ next_project_image }}">
                            </div>
                         </div>
                      </div>
                   </a>
+
                   <div class="row">
                      <div class="flex-col">
                         <div class="stripe"></div>
