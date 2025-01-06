@@ -21,7 +21,6 @@ def works(request):
 def projects(request, id, name):
     csv_file_path = os.path.join(settings.STATIC_ROOT, 'Projects_Info.csv')
 
-
     # Check if the file exists
     if not os.path.exists(csv_file_path):
         raise Http404("CSV file not found.")
@@ -39,7 +38,7 @@ def projects(request, id, name):
     if not project_data:
         raise Http404("Project not found.")
 
-    # Isolate and prepare individual fields
+    # Isolate and prepare individual fields, including the new ones
     project_context = {
         'id': project_data.get('id', 'N/A'),
         'name': project_data.get('Project Name', 'Untitled Project'),
@@ -57,6 +56,10 @@ def projects(request, id, name):
         'year': project_data.get('Location & Year', 'N/A').split(', ')[-1],
         'next_project_name': project_data.get('Next Project Name', 'None'),
         'next_project_link': project_data.get('Next Project Link', '#'),
+        # New fields for detailed project info
+        'project_overview': project_data.get('Project Overview', 'No overview available.'),
+        'technologies_features': project_data.get('Technologies & Features', 'No technologies available.'),
+        'impact_future_directions': project_data.get('Impact & Future Directions', 'No impact details available.')
     }
 
     # Pass the isolated data to the template
