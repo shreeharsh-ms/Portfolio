@@ -41,7 +41,9 @@ def projects(request, id, name):
     # Isolate and prepare individual fields, including the new ones
     next_project_id = int(project_data.get('id', -1)) + 1  # Get the ID for the next project
     next_project_name = project_data.get('Next Project Name', 'None')
-    next_project_link = f"/projects/{next_project_id}/{next_project_name.replace(' ', '-')}/"
+    
+    # Ensure no double slashes
+    next_project_link = f"/projects/{next_project_id}/{next_project_name.replace(' ', '-')}/" if next_project_name != 'None' else None
 
     project_context = {
         'id': project_data.get('id', 'N/A'),

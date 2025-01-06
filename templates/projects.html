@@ -577,7 +577,8 @@
             <section class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom"
                data-scroll-offset="-25%, 0%">
                <div class="container medium">
-                  <a href="{{ project.next_project_link }}" class="row next-case-btn">
+                  <a href="{{ project.next_project_link }}" class="row next-case-btn" {% if project.next_project_link
+                     %}>
                      <div class="flex-col">
                         <p>Next case</p>
                         <h2>{{ project.next_project_name }}</h2>
@@ -592,6 +593,7 @@
                         </div>
                      </div>
                   </a>
+
 
 
                   <div class="row">
